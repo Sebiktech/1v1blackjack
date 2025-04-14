@@ -1,0 +1,8 @@
+Transactions
+	codes:
+		1 - deposit
+		2 - withdrawal
+		3 - gifted points by admin
+		4 - game created
+		5 - joined game
+		6 - coins won in game

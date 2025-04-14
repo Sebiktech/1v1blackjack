@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Blackjack</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/f407b36bcd.js" crossorigin="anonymous"></script>
+        <link href="/static/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+
+      <%- include('./partials/nav.ejs') %>
+
+        <div class="container text-white">
+          <div class="row rounded game-wrapper">
+            <div class="col-6 col-md-4 game-sidebar">
+              <label for="bet" class="d-block">Bet Amount</label>
+              <input id="bet" type="number">
+                <button id="half" type="button" class="btn btn-primary">1/2</button>
+                <button id="double" type="button" class="btn btn-primary">2x</button>
+              <label for="count" class="d-block">Game Multiplier</label>
+              <select name="count" id="count" class=" col d-block w-100">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+              </select>
+              <button id="create" type="button" class="btn btn-success w-100 d-block">Create Game</button>
+            </div>
+            <div class="col-12 col-md-8 game-content">
+              
+            </div>
+          </div>
+          <h2>Active Hands</h2>
+          <div id="active-games">
+          </div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Creator</th>
+                    <th scope="col">Bet Amount</th>
+                    <th scope="col">Join</th>
+                  </tr>
+                </thead>
+                <tbody id="games">
+                </tbody>
+              </table>
+        </div>
+        <div id="notification-box"></div>
+        <script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"></script>
+        <script src="/static/script.js"></script>
+    </body>
+</html>
